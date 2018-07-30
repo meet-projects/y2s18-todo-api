@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
     let username = req.body.username;
     let rating = req.body.rating;
 
-    res.send(`Hello, ${username}! You were rated ${username.length} out of 5 stars.`);
+    res.send(`Hello, ${username}! You were rated ${rating} out of 5 stars.`);
   } catch (err) {
     res.status(500);
     res.send(err.message);
