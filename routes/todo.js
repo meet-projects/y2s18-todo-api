@@ -29,8 +29,12 @@ Task.sync({
   force: true
 }).then(() => {});
 
+router.get('/', async (req, res) => {
+  res.render('todo-home');
+});
+
 /* retrieve all in list via POST */
-router.get('/', async (req, res, next) => {
+router.get('/read', async (req, res, next) => {
   try {
     if (!req.query.list || !req.query.password) {
       res.status(400);
