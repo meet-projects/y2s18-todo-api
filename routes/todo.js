@@ -29,15 +29,10 @@ Task.sync({
   force: true
 }).then(() => {});
 
-/* GET todo listing. */
-router.get('/', async (req, res, next) => {
-  res.render('todo-home');
-});
-
 /* retrieve all in list via POST */
-router.post('/', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
   try {
-    if (!req.body.list || !req.body.password) {
+    if (!req.query.list || !req.query.password) {
       res.status(400);
       res.json({
         success: false,
@@ -46,8 +41,8 @@ router.post('/', async (req, res, next) => {
       return;
     }
 
-    const listName = req.body.list;
-    const password = sha256.x2(req.body.password);
+    const listName = req.query.list;
+    const password = sha256.x2(req.query.password);
 
     let tasks = await Task.findAll({
       where: {
