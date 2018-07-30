@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSON "About Me"</title>
+</head>
+
+<body>
+    <h1>JSON About Me</h1>
+    <form action="/json/submit" method="POST">
+        <p>
+            Send us your "me" object literal as a JSON string!
+            The string should start with { and end with }
+            (not quotation marks!).
+        </p>
+        <p>
+            An example string:
+            <code>
+                {"firstName":"Matthew","lastName":"Feng","age":19,"favoriteFoods":["dumplings","kiwi"],"picture":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"}
+            </code>
+        </p>
+        <input type="text" name="info" placeholder="JSON String"/>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+
+</html>
