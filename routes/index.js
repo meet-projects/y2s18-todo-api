@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'MEET API' });
 });
 
+router.get('/playground', function(req, res, next) {
+  res.render('playground');
+});
+
 module.exports = router;
